@@ -1,0 +1,17 @@
+<ion-menu [content]="NAV">
+    <ion-header>
+        <ion-toolbar color="primary">
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <img src="/assets/images/google.jpg" alt="">
+        <ion-list>
+            <button ion-item *ngFor="let page of pages" (click)="goToPage(page.component)" menuClose>
+                <ion-icon item-left ios="ios-{{page.icon}}" md="md-{{page.icon}}"></ion-icon>
+                {{page.titulo}}
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav #NAV [root]="rootPage"></ion-nav>
